@@ -40,3 +40,4 @@ jspm_packages
 *.name
 build/
 .idea
+bower_components/
