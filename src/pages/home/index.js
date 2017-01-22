@@ -4,35 +4,35 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div class="statusbar-overlay"></div>
-                <div class="panel-overlay"></div>
-                <div class="panel panel-left panel-reveal">
-                    <div class="content-block">
+                <div className="statusbar-overlay"></div>
+                <div className="panel-overlay"></div>
+                <div className="panel panel-left panel-reveal">
+                    <div className="content-block">
                         <p>Left panel content goes here</p>
                     </div>
                 </div>
-                <div class="views">
-                    <div class="view view-main">
-                        <div class="navbar">
-                            <div class="navbar-inner">
-                                <div class="center sliding">Awesome App</div>
-                                <div class="right">
-                                    <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-blue"></i></a>
+                <div className="views">
+                    <div className="view view-main">
+                        <div className="navbar">
+                            <div className="navbar-inner">
+                                <div className="center sliding">Awesome App</div>
+                                <div className="right">
+                                    <a href="#" className="link icon-only open-panel"><i className="icon icon-bars-blue"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="pages navbar-through toolbar-through">
-                            <div data-page="index" class="page">
-                                <div class="page-content">
+                        <div className="pages navbar-through toolbar-through">
+                            <div data-page="index" className="page">
+                                <div className="page-content">
                                     <p>Page content goes here</p>
                                     <a href="about.html">About app</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="toolbar">
-                            <div class="toolbar-inner">
-                                <a href="#" class="link">Link 1</a>
-                                <a href="#" class="link">Link 2</a>
+                        <div className="toolbar">
+                            <div className="toolbar-inner">
+                                <a href="#" className="link">Link 1</a>
+                                <a href="#" className="link">Link 2</a>
                             </div>
                         </div>
                     </div>
