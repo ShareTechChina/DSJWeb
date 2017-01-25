@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import {fetchDetail} from '../../actions/detail';
+import { connect } from 'react-redux';
 
 class App extends Component {
+    constructor(props){
+        super(props);
+    }
 
     componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(fetchDetail(1));
     }
 
     render() {
@@ -40,4 +47,10 @@ class App extends Component {
     }
 }
 
-export default App;
+function mapStateToProps(state) {
+    const {  detail } = state;
+    return {
+        detail
+    };
+}
+export default connect(mapStateToProps)(App);
