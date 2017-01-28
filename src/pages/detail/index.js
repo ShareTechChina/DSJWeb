@@ -8,6 +8,13 @@ class Detail extends Component {
     }
 
     componentDidMount() {
+        let mySwiper = window.f7.swiper('.swiper-container', {
+            speed: 400,
+            spaceBetween: 100,
+            pagination:'.swiper-pagination',
+            spaceBetween: 0
+        });
+
         const { dispatch } = this.props;
         dispatch(fetchDetail(1));
     }
@@ -35,6 +42,15 @@ class Detail extends Component {
                         <div className="pages navbar-through toolbar-through">
                             <div data-page="index" className="page">
                                 <div className="page-content">
+
+                                    <div className="swiper-container">
+                                        <div className="swiper-wrapper">
+                                            <div className="swiper-slide">Slide 1</div>
+                                            <div className="swiper-slide">Slide 2</div>
+                                            <div className="swiper-slide">Slide 3</div>
+                                        </div>
+                                        <div className="swiper-pagination"></div>
+                                    </div>
 
                                 </div>
                             </div>
