@@ -42,7 +42,10 @@ class Detail extends Component {
                         <div className="pages navbar-through toolbar-through">
                             <div data-page="index" className="page">
                                 <div className="page-content">
-
+                                    <div className="user">
+                                        <div className="portrait">
+                                        </div>
+                                    </div>
                                     <div className="swiper-container">
                                         <div className="swiper-wrapper">
                                             <div className="swiper-slide">Slide 1</div>
@@ -51,7 +54,12 @@ class Detail extends Component {
                                         </div>
                                         <div className="swiper-pagination"></div>
                                     </div>
-
+                                    <div className="description">
+                                        <p classNme="title">This is title</p>
+                                        <p classNme="content">blablas.........</p>
+                                    </div>
+                                    <div className="comment">
+                                    </div>
                                 </div>
                             </div>
                         </div>

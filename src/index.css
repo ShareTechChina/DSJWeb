@@ -17,3 +17,34 @@ body {
   margin:20px;
   font-size:21px;
 }
+
+.user{
+  height: 34px;
+  margin: 10px;
+}
+.portrait{
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: #000;
+}
+.description{
+  padding: 10px;
+  background: #fff;
+}
+.description > *{
+  font-size: 13px;
+  color: #4a4a4a;
+  line-height: 18px;
+  padding-bottom: 2px;
+}
+.description .title{
+  margin-bottom: 14px;
+}
+.comment{
+  background: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  min-height: 40px;
+}
