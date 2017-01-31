@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {fetchDetail} from '../../actions/detail';
 import { connect } from 'react-redux';
 import { timeFormat } from '../../utils/common';
+import {fetchCommentsList} from '../../actions/comments';
 
+let noteId = 1;
 class Detail extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +12,8 @@ class Detail extends Component {
 
     componentDidMount() {
         const { dispatch } = this.props;
-        dispatch(fetchDetail(1));
+        dispatch(fetchDetail(noteId));
+        dispatch(fetchCommentsList(noteId))
     }
 
     componentDidUpdate() {
@@ -23,7 +26,6 @@ class Detail extends Component {
 
     render() {
         let { detail } = this.props;
-        let noteId = 1;
         let slide;
         if (detail.note[noteId]) {
             slide = detail.note[noteId].images.map((val, key) => {
@@ -97,9 +99,10 @@ class Detail extends Component {
 }
 
 function mapStateToProps(state) {
-    const {  detail } = state;
+    const {  detail,comments } = state;
     return {
-        detail
+        detail,
+        comments
     };
 }
 export default connect(mapStateToProps)(Detail);
