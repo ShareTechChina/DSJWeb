@@ -25,8 +25,9 @@ class Detail extends Component {
     }
 
     render() {
-        let { detail } = this.props;
+        let { detail,comments } = this.props;
         let slide;
+        let commentLi;
         if (detail.note[noteId]) {
             slide = detail.note[noteId].images.map((val, key) => {
                 return ( <div className="swiper-slide" key={key}>
@@ -39,6 +40,15 @@ class Detail extends Component {
                     <img src=''/>
                 </div>
         }
+
+        if (comments.commentsList) {
+            commentLi = comments.commentsList.map((val, key) => {
+                return ( <li className="" key={key}>
+                    <img src="https://facebook.github.io/react/img/logo_small_2x.png"/>
+                </li>);
+            }, this);
+        }
+
         return (
             <div className="Detail">
                 <div className="statusbar-overlay"></div>
@@ -86,6 +96,24 @@ class Detail extends Component {
                                         <p className="content">{detail.note[noteId] ? detail.note[noteId].content : '' }</p>
                                     </div>
                                     <div className="comment">
+                                        <ul>
+                                            <li>
+                                                <img src='https://facebook.github.io/react/img/logo_small_2x.png'/>
+                                                <div>
+                                                    <div>
+                                                        <span >name </span>
+                                                        <span  >2016-08-05 </span>
+                                                    </div>
+
+                                                    <div >
+                                                        <span>test</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            {
+                                                commentLi
+                                            }
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
