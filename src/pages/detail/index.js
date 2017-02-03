@@ -58,7 +58,7 @@ class Detail extends Component {
                         <div>
                             <div>
                                 <span className="nick">{val.authorNickname} </span>
-                                <span className="time">2016-08-05 </span>
+                                <span className="time">2016-08-05</span>
                             </div>
 
                             <div className="content">
