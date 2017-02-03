@@ -14,6 +14,7 @@ class DSJRouter extends Component {
             <Router history={browserHistory}>
                 <Route path="/" component={Home}/>
                 <Route path="detail" component={Detail}/>
+                <Route path="detail/*" component={Detail}/>
                 <Route/>
             </Router>
         );

@@ -17,15 +17,22 @@ class Detail extends Component {
     }
 
     componentDidUpdate() {
-        window.f7.swiper('.swiper-container', {
-            speed: 400,
-            pagination: '.swiper-pagination',
-            spaceBetween: 0
-        });
+        setTimeout(()=>{
+            window.f7.swiper('.swiper-container', {
+                speed: 100,
+                pagination: '.swiper-pagination',
+                spaceBetween: 0
+            });
+        },0);
+
     }
 
     render() {
         let { detail,comments } = this.props;
+        const location = this.props.router.getCurrentLocation();
+        const pathname = location.pathname;
+        const last = pathname.split('/')[pathname.split('/').length - 1];
+        noteId = /^[0-9]*$/.test(last) ? last : noteId;
         let slide;
         let commentLi;
         if (detail.note[noteId]) {
@@ -43,9 +50,22 @@ class Detail extends Component {
 
         if (comments.commentsList) {
             commentLi = comments.commentsList.map((val, key) => {
-                return ( <li className="" key={key}>
-                    <img src="https://facebook.github.io/react/img/logo_small_2x.png"/>
-                </li>);
+                return (
+                    <li key={key}>
+                        <div>
+                            <img src='https://facebook.github.io/react/img/logo_small_2x.png'/>
+                        </div>
+                        <div>
+                            <div>
+                                <span className="nick">{val.authorNickname} </span>
+                                <span className="time">2016-08-05 </span>
+                            </div>
+
+                            <div className="content">
+                                <span>{val.comment}</span>
+                            </div>
+                        </div>
+                    </li>);
             }, this);
         }
 
@@ -78,8 +98,10 @@ class Detail extends Component {
                                                 alt=""/>
                                         </div>
                                         <div className="nick">
-                                            <div className="nick-name">{detail.note[noteId] ? detail.note[noteId].nickname : '' }</div>
-                                            <div className="publish-time">{detail.note[noteId] ? timeFormat(detail.note[noteId].publishTime, 'yyyy年MM月dd日 hh:mm:ss') : ''}</div>
+                                            <div
+                                                className="nick-name">{detail.note[noteId] ? detail.note[noteId].nickname : '' }</div>
+                                            <div
+                                                className="publish-time">{detail.note[noteId] ? timeFormat(detail.note[noteId].publishTime, 'yyyy年MM月dd日 hh:mm:ss') : ''}</div>
                                         </div>
                                     </div>
                                     <div className="swiper-container">
@@ -97,23 +119,20 @@ class Detail extends Component {
                                     </div>
                                     <div className="comment">
                                         <ul>
-                                            <li>
-                                                <img src='https://facebook.github.io/react/img/logo_small_2x.png'/>
-                                                <div>
-                                                    <div>
-                                                        <span >name </span>
-                                                        <span  >2016-08-05 </span>
-                                                    </div>
 
-                                                    <div >
-                                                        <span>test</span>
-                                                    </div>
-                                                </div>
-                                            </li>
                                             {
                                                 commentLi
                                             }
                                         </ul>
+                                    </div>
+                                </div>
+                                <div className="toolbar">
+                                    <div className="toolbar-inner">
+                                        <div className="slogan">
+                                            <img src={require('../../assets/logo.png')} alt=""/>
+                                            <span className="content">淘宝返利，分享创造价值</span>
+                                        </div >
+                                        <a href="#" className="link enter">进入剁手记</a>
                                     </div>
                                 </div>
                             </div>
