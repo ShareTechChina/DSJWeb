@@ -1,3 +1,35 @@
-.eSearch {
-    background: #000;
+.eSearch .title {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    color: #4a4a4a;
+}
+.icons {
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 20px;
+    margin-top: 20px;
+}
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+#taobao {
+    background: url(./taobao.jpg) no-repeat;
+    background-size: 100%;
+}
+#tmall {
+    background: url(./tmall.png) no-repeat;
+    background-size: 100%;
+}
+#jd {
+    background: url(./jd.png) no-repeat;
+    background-size: 100%;
+}
+#baidu {
+    background: url(./baidu.png) no-repeat #e6e6e6;
+    background-size: 100%;
 }
