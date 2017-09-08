@@ -64,12 +64,12 @@ class Detail extends Component {
                 return (
                     <li key={key}>
                         <div>
-                            <img src='https://facebook.github.io/react/img/logo_small_2x.png'/>
+                            <img src={val.authorPortraitUrl}/>
                         </div>
                         <div>
                             <div>
                                 <span className="nick">{val.authorNickname} </span>
-                                <span className="time">2016-08-05</span>
+                                <span className="time">{timeFormat(new Date(val.createdDateTime), 'yyyy年MM月dd日 hh:mm:ss')}</span>
                             </div>
 
                             <div className="content">
@@ -112,7 +112,7 @@ class Detail extends Component {
                                             <div
                                                 className="nick-name">{detail.note[noteId] ? detail.note[noteId].nickname : '' }</div>
                                             <div
-                                                className="publish-time">{detail.note[noteId] ? timeFormat(detail.note[noteId].publishTime, 'yyyy年MM月dd日 hh:mm:ss') : ''}</div>
+                                                className="publish-time">{detail.note[noteId] ? timeFormat(new Date(detail.note[noteId].publishedTime), 'yyyy年MM月dd日 hh:mm:ss') : ''}</div>
                                         </div>
                                     </div>
                                     <div className="swiper-container">
