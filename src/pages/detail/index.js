@@ -3,6 +3,8 @@ import {fetchDetail} from '../../actions/detail';
 import { connect } from 'react-redux';
 import { timeFormat } from '../../utils/common';
 import {fetchCommentsList} from '../../actions/comments';
+import emojiData from 'emoji-datasource';
+import _ from 'lodash';
 
 let noteId = 1;
 class Detail extends Component {
@@ -26,6 +28,15 @@ class Detail extends Component {
         },0);
 
     }
+
+    parse(text) {
+        _.each(emojiData, (value, key) => {
+            var reg = new RegExp('\\[' + value.name + '\\]', "g");
+            const emoji = String.fromCodePoint(...value.unified.split('-').map(u => '0x' + u));
+            text = text.replace(reg, emoji);
+        });
+        return text;
+    };
 
     render() {
         let { detail,comments } = this.props;
@@ -62,7 +73,7 @@ class Detail extends Component {
                             </div>
 
                             <div className="content">
-                                <span>{val.comment}</span>
+                                <span>{this.parse(val.comment)}</span>
                             </div>
                         </div>
                     </li>);
