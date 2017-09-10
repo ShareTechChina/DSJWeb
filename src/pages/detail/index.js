@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {fetchDetail} from '../../actions/detail';
 import { connect } from 'react-redux';
-import { timeFormat } from '../../utils/common';
+import { timeFormat,device } from '../../utils/common';
 import {fetchCommentsList} from '../../actions/comments';
 import emojiData from 'emoji-datasource';
 import _ from 'lodash';
@@ -37,6 +37,12 @@ class Detail extends Component {
         });
         return text;
     };
+
+    jumpToApp() {
+        if(device() === 'ios'){
+            location.href = 'duoshouji://';
+        }
+    }
 
     render() {
         let { detail,comments } = this.props;
@@ -143,7 +149,7 @@ class Detail extends Component {
                                             <img src={require('../../assets/logo.png')} alt=""/>
                                             <span className="content">淘宝返利，分享创造价值</span>
                                         </div >
-                                        <a href="#" className="link enter">进入剁手记</a>
+                                        <a href="" onClick={this.jumpToApp} className="link enter">进入剁手记</a>
                                     </div>
                                 </div>
                             </div>

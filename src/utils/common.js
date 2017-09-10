@@ -57,3 +57,15 @@ export function timeFormat(time,parrent) {
     };
     return cal(parrent);
 }
+
+export function device(){
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if(isAndroid){
+        return 'android';
+    } else if(isiOS) {
+        return 'ios';
+    }
+    return null;
+}
