@@ -41,6 +41,7 @@ class Detail extends Component {
     jumpToApp() {
         if(device() === 'ios'){
             location.href = 'duoshouji://';
+            //location.reload();
         }
     }
 
