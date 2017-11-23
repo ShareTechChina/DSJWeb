@@ -131,9 +131,9 @@ class Detail extends Component {
                                         <div className="swiper-pagination"></div>
                                     </div>
                                     <div className="description">
-                                        <p className="title">{detail.note[noteId] ? detail.note[noteId].title : ''}</p>
+                                        <p className="title">{detail.note[noteId] ? this.parse(detail.note[noteId].title) : ''}</p>
 
-                                        <p className="content">{detail.note[noteId] ? detail.note[noteId].content : '' }</p>
+                                        <p className="content">{detail.note[noteId] ? this.parse(detail.note[noteId].content) : '' }</p>
                                     </div>
                                     <div className="comment">
                                         <ul>
