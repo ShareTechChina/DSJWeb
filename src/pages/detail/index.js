@@ -56,7 +56,7 @@ class Detail extends Component {
         if (detail.note[noteId]) {
             slide = detail.note[noteId].images.map((val, key) => {
                 return ( <div className="swiper-slide" key={key}>
-                    <img src={val.image.url}/>
+                    <img alt="" src={val.image.url?val.image.url:'https://avatars2.githubusercontent.com/u/19884155?v=3&s=200'}/>
                 </div>);
             }, this);
         } else {
@@ -71,7 +71,7 @@ class Detail extends Component {
                 return (
                     <li key={key}>
                         <div>
-                            <img src={val.authorPortraitUrl}/>
+                            <img alt=" " src={val.authorPortraitUrl? val.authorPortraitUrl :'https://avatars2.githubusercontent.com/u/19884155?v=3&s=200'}/>
                         </div>
                         <div>
                             <div>
