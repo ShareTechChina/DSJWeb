@@ -4,36 +4,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tag above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <!-- Path to Framework7 iOS CSS theme styles-->
     <link rel="stylesheet" href="%PUBLIC_URL%/f7/css/framework7.ios.min.css">
-    <!-- Path to Framework7 iOS related color styles -->
     <link rel="stylesheet" href="%PUBLIC_URL%/f7/css/framework7.ios.colors.min.css">
     <title>剁手记</title>
+    <style>
+      toolbar-inner .slogan {
+        padding-top: 4px;
+      }
+
+      .toolbar-inner .slogan .content {
+        display: inline-block;
+        vertical-align: super;
+        margin-left: 8px;
+      }
+
+      .toolbar-inner .slogan img {
+        width: 28px;
+      }
+
+      .toolbar {
+        background-color: rgba(255,255,255,0.8);
+      }
+
+      .toolbar .link.enter{
+        padding: 7px;
+        height: 16px;
+        border: 1px solid;
+        background: #fc7d30;
+        border-radius: 7px;
+        color: #fff;
+      }
+      .toolbar{
+        z-index: 5000;
+        position: absolute;
+      }
+
+    </style>
   </head>
   <body>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div class="toolbar">
+      <div class="toolbar-inner">
+        <div class="slogan">
+          <img src={require('../../assets/logo.png')} alt=""/>
+          <span class="content">淘宝返利，分享创造价值</span>
+        </div >
+        <a href="" id="btnOpenApp" onClick={this.jumpToApp} class="link enter">进入剁手记</a>
+      </div>
+    </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`.
-    -->
-    <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="%PUBLIC_URL%/f7/js/framework7.min.js"></script>
     <script src="https://static.mlinks.cc/scripts/dist/mlink.min.js"></script>
-
+    <script>
+        new Mlink({
+            mlink:'https://am4nne.mlinks.cc/Ad4z',//短链地址
+            button:document.querySelector('a#btnOpenApp')
+        });
+    </script>
   </body>
 </html>

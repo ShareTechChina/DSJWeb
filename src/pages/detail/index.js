@@ -15,7 +15,7 @@ class Detail extends Component {
     componentDidMount() {
         const { dispatch } = this.props;
         dispatch(fetchDetail(noteId));
-        dispatch(fetchCommentsList(noteId))
+        dispatch(fetchCommentsList(noteId));
     }
 
     componentDidUpdate() {
@@ -40,7 +40,7 @@ class Detail extends Component {
 
     jumpToApp() {
         if(device() === 'ios'){
-            location.href = 'duoshouji://';
+            // location.href = 'duoshouji://';
             //location.reload();
         }
     }
@@ -144,15 +144,7 @@ class Detail extends Component {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="toolbar">
-                                    <div className="toolbar-inner">
-                                        <div className="slogan">
-                                            <img src={require('../../assets/logo.png')} alt=""/>
-                                            <span className="content">淘宝返利，分享创造价值</span>
-                                        </div >
-                                        <a href="" onClick={this.jumpToApp} className="link enter">进入剁手记</a>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 

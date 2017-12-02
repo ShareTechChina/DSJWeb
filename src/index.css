@@ -4,7 +4,6 @@ body {
 }
 
 .views {
-    position: absolute;
 }
 
 .swiper-container {
@@ -143,4 +142,7 @@ body {
     background: #fc7d30;
     border-radius: 7px;
     color: #fff;
+}
+#root,.Detail{
+    height: 100%;
 }
