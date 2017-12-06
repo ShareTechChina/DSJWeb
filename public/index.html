@@ -56,9 +56,14 @@
     <script type="text/javascript" src="%PUBLIC_URL%/f7/js/framework7.min.js"></script>
     <script src="https://static.mlinks.cc/scripts/dist/mlink.min.js"></script>
     <script>
+        var path = window.location.pathname;
+        var noteId = path.split('/')[path.split('/').length-1];
         new Mlink({
-            mlink:'https://am4nne.mlinks.cc/Ad4z',//短链地址
-            button:document.querySelector('a#btnOpenApp')
+            mlink:'Ad4z',//短链地址
+            button:document.querySelector('a#btnOpenApp'),
+            params: {
+                noteId: noteId && /^[0-9]*$/.test(noteId)?noteId : 1
+            }
         });
     </script>
   </body>
