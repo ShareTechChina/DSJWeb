@@ -31,7 +31,7 @@ class Detail extends Component {
 
     parse(text) {
         _.each(emojiData, (value, key) => {
-            var reg = new RegExp('\\[' + value.name + '\\]', "g");
+            var reg = new RegExp('\\[' + value.unified + '\\]', "g");
             const emoji = String.fromCodePoint(...value.unified.split('-').map(u => '0x' + u));
             text = text.replace(reg, emoji);
         });
