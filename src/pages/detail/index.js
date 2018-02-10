@@ -32,9 +32,10 @@ class Detail extends Component {
     parse(text) {
         _.each(emojiData, (value, key) => {
             var reg = new RegExp('\\[' + value.unified + '\\]', "g");
-            const emoji = String.fromCodePoint(...value.unified.split('-').map(u => '0x' + u));
+            const emoji = String.fromCharCode(...value.unified.split('-').map((u)=> '0x' + u));
             text = text.replace(reg, emoji);
         });
+
         return text;
     };
 
@@ -111,9 +112,11 @@ class Detail extends Component {
                                 <div className="page-content">
                                     <div className="user">
                                         <div className="portrait">
-                                            <img
-                                                src={detail.note[noteId] ? detail.note[noteId].portrait : 'https://avatars2.githubusercontent.com/u/19884155?v=3&s=200'}
-                                                alt=""/>
+                                            {
+                                                <img
+                                                    src={detail.note[noteId] ? detail.note[noteId].portrait : 'https://avatars2.githubusercontent.com/u/19884155?v=3&s=200'}
+                                                    alt=""/>
+                                            }
                                         </div>
                                         <div className="nick">
                                             <div
